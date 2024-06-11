@@ -25,7 +25,7 @@ export class Appointment extends Entity {
     type: 'date',
     default: now(),
   })
-  appointmentDate?: string;
+  appointment_date?: string;
 
   @property({
     type: 'string',

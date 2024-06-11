@@ -59,7 +59,7 @@ export class Car extends Entity {
     type: 'number',
     required: true,
   })
-  placeNumber: number;
+  place_number: number;
 
   @property({
     type: 'number',
