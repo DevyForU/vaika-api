@@ -19,6 +19,9 @@ export class Car extends Entity {
   @property({
     type: 'string',
     required: true,
+    jsonSchema:{
+      enum: ['pending,validated,rejected,archived']
+    }
   })
   status: string;
 
