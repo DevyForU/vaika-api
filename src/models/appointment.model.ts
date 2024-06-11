@@ -29,7 +29,7 @@ export class Appointment extends Entity {
 
   @property({
     type: 'string',
-    default: unknow,
+    default: 'unknow',
   })
   status?: string;
 
@@ -49,3 +49,7 @@ export interface AppointmentRelations {
 }
 
 export type AppointmentWithRelations = Appointment & AppointmentRelations;
+function now(): String {
+  return new Date().toISOString();
+}
+
