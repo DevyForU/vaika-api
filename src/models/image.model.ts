@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {Car} from './car.model';
 
 @model({settings: {strict: false}})
 export class Image extends Entity {
@@ -15,6 +16,8 @@ export class Image extends Entity {
   })
   url: string;
 
+  @belongsTo(() => Car, {name: 'belongs'})
+  car_id: number;
   // Define well-known properties here
 
   // Indexer property to allow additional data

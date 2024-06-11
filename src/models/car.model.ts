@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Image} from './image.model';
 
 @model({settings: {strict: false}})
 export class Car extends Entity {
@@ -63,6 +64,8 @@ export class Car extends Entity {
   })
   power: number;
 
+  @hasMany(() => Image, {keyTo: 'car_id'})
+  images: Image[];
   // Define well-known properties here
 
   // Indexer property to allow additional data
